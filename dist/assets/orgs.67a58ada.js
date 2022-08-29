@@ -1,0 +1,1 @@
+import{bu as r}from"./index.a7d776d7.js";const a=()=>r.get("/api/branch/getList"),s=e=>r({url:"/api/branch/deleteBranch",params:e,method:"delete"}),n=e=>r.get("/api/branch/getInfo?id="+e),i=e=>e.id?r.post("/api/branch/updateBranch",e):r.post("/api/branch/saveBranch",e);export{n as a,i as b,s as d,a as u};
