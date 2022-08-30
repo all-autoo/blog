@@ -1,0 +1,1 @@
+import{b$ as s}from"./index.062059f7.js";const i=t=>s.get("/sys/dict/type/"+t),c=t=>t.id?s.put("/sys/dict/type",t):s.post("/sys/dict/type",t),p=t=>s.get("/sys/dict/data/"+t),u=t=>t.id?s.put("/sys/dict/data",t):s.post("/sys/dict/data",t);export{u as a,i as b,c,p as u};
