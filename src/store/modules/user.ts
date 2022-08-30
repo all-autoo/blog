@@ -28,6 +28,8 @@ export const userStore = defineStore('userStore', {
 		// 用户登录
 		async loginAction(loginForm: any) {
 			const res: any = await useLoginApi(loginForm)
+      console.log(res);
+      
 			this.setToken(res.data.token)
 		},
 		// 获取用户信息

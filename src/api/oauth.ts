@@ -6,9 +6,9 @@ export const useCaptchaApi = () => {
 
 export const useLoginApi = (data: any) => {
 	return service({
-    url: '/api/auth/login',
+    url: '/api/login',
     method: 'post',
-    data: { acctOrMobile: data.username, password: data.password ,type:1}
+    data: data
   })
 }
 

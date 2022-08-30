@@ -3,9 +3,10 @@ import { ElMessage, ElMessageBox, ElLoading } from 'element-plus'
 import store from '@/store'
 import cache from '@/utils/cache'
 
+export const baseURL = import.meta.env.VITE_API_URL as any
 // axios实例
 const service = axios.create({
-	baseURL: import.meta.env.VITE_API_URL as any,
+	baseURL: baseURL,
 	timeout: 60000,
 })
 
@@ -14,7 +15,8 @@ let loadingInstance:any
 // 请求拦截器
 service.interceptors.request.use(
 	(config: any) => {
-
+    console.log(config);
+    
     loadingInstance = ElLoading.service({
       lock: true,
       text: 'Loading',

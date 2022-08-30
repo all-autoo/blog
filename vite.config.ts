@@ -1,6 +1,8 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { viteMockServe } from 'vite-plugin-mock'
+
 
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -30,7 +32,11 @@ export default defineConfig({
 		createSvgIconsPlugin({
 			iconDirs: [resolve(__dirname, 'src/icons/svg')],
 			symbolId: 'icon-[dir]-[name]'
-		})
+		}),
+    viteMockServe({
+      mockPath: "./src/mock/source", // 解析，路径可根据实际变动
+      localEnabled: true // 此处可以手动设置为true，也可以根据官方文档格式
+    })
 	],
 	server: {
 		host: '0.0.0.0',

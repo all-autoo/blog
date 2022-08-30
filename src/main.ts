@@ -16,7 +16,9 @@ import 'element-plus/theme-chalk/src/message-box.scss'
 import FastTableColumn from '@/components/fast-table-column'
 import FastRadioGroup from '@/components/fast-radio-group'
 import FastSelect from '@/components/fast-select'
+import { mockXHR } from '../mock/index'
 
+mockXHR()
 const app = createApp(App)
 
 // 挂载全局方法

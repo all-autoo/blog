@@ -83,144 +83,56 @@ export const constantMenu = [
       }
     ]
   },
-  {
-    name: '停车场管理',
+	{
+		id: 1000,
+		name: 'Demo',
 		url: null,
-		path: '/car-park',
-		icon: 'icon-car',
-		children: [
-      {
-        name: '停车场列表',
-				url: '/car-park/index',
-				path: '/car-park/index',
-				icon: 'icon-car'
-      },
-      {
-        name: '停车场详情',
-				url: '/car-park/detail',
-				path: '/car-park/detail',
-				icon: 'icon-car',
-        hidden: true
-      }
-    ]
-  },
-  {
-    name: '订单缴费管理',
-		url: null,
-		path: '/order-pay',
-		icon: 'icon-order',
-		children: [
-      {
-        name: '订单缴费列表',
-				url: '/order-pay/index',
-				path: '/order-pay/index',
-				icon: 'icon-order'
-      }
-    ]
-  },
-  {
-    name: '发票管理',
-		url: null,
-		path: '/invoice',
-		icon: 'icon-invoice',
-		children: [
-      {
-        name: '发票列表',
-				url: '/invoice/index',
-				path: '/invoice/index',
-				icon: 'icon-invoice'
-      }
-    ]
-  },
-  {
-		name: '系统设置',
-		url: null,
-		path: '/system',
+		path: '/demo',
+		openStyle: 0,
 		icon: 'icon-windows',
 		children: [
 			{
-				name: '用户管理',
-				url: '/system/user/index',
-				path: '/system/user/index',
+				id: 1001,
+				name: 'Icon 图标',
+				url: '/demo/icons/index',
+				path: '/demo/icons/index',
+				openStyle: 0,
 				icon: 'icon-unorderedlist'
 			},
 			{
-				name: '停车场用户',
-				url: '/system/car-user/index',
-				path: '/system/car-user/index',
+				id: 1002,
+				name: '二维码生成',
+				url: '/demo/qrcode/index',
+				path: '/demo/qrcode/index',
+				openStyle: 0,
 				icon: 'icon-unorderedlist'
 			},
 			{
-				name: '角色管理',
-				url: '/system/role/index',
-				path: '/system/role/index',
+				id: 1003,
+				name: '页面打印',
+				url: '/demo/printJs/index',
+				path: '/demo/printJs/index',
+				openStyle: 0,
 				icon: 'icon-unorderedlist'
 			},
 			{
-				name: '机构管理',
-				url: '/system/org/index',
-				path: '/system/org/index',
+				id: 1004,
+				name: '图片裁剪',
+				url: '/demo/cropper/index',
+				path: '/demo/cropper/index',
+				openStyle: 0,
 				icon: 'icon-unorderedlist'
 			},
 			{
-				name: '菜单管理',
-				url: '/system/menu/index',
-				path: '/system/menu/index',
+				id: 1005,
+				name: '富文本编辑器',
+				url: '/demo/wangeditor/index',
+				path: '/demo/wangeditor/index',
+				openStyle: 0,
 				icon: 'icon-unorderedlist'
 			}
-    ]
-
-  },
-	// {
-	// 	id: 1000,
-	// 	name: 'Demo',
-	// 	url: null,
-	// 	path: '/demo',
-	// 	openStyle: 0,
-	// 	icon: 'icon-windows',
-	// 	children: [
-	// 		{
-	// 			id: 1001,
-	// 			name: 'Icon 图标',
-	// 			url: '/demo/icons/index',
-	// 			path: '/demo/icons/index',
-	// 			openStyle: 0,
-	// 			icon: 'icon-unorderedlist'
-	// 		},
-	// 		{
-	// 			id: 1002,
-	// 			name: '二维码生成',
-	// 			url: '/demo/qrcode/index',
-	// 			path: '/demo/qrcode/index',
-	// 			openStyle: 0,
-	// 			icon: 'icon-unorderedlist'
-	// 		},
-	// 		{
-	// 			id: 1003,
-	// 			name: '页面打印',
-	// 			url: '/demo/printJs/index',
-	// 			path: '/demo/printJs/index',
-	// 			openStyle: 0,
-	// 			icon: 'icon-unorderedlist'
-	// 		},
-	// 		{
-	// 			id: 1004,
-	// 			name: '图片裁剪',
-	// 			url: '/demo/cropper/index',
-	// 			path: '/demo/cropper/index',
-	// 			openStyle: 0,
-	// 			icon: 'icon-unorderedlist'
-	// 		},
-	// 		{
-	// 			id: 1005,
-	// 			name: '富文本编辑器',
-	// 			url: '/demo/wangeditor/index',
-	// 			path: '/demo/wangeditor/index',
-	// 			openStyle: 0,
-	// 			icon: 'icon-unorderedlist'
-	// 		}
-	// 	]
-	// }
+		]
+	}
 ]
 
 export const errorRoute: RouteRecordRaw = {
@@ -244,17 +156,17 @@ router.beforeEach(async (to, from, next) => {
 	if (store.userStore.token) {
 		if (to.path === '/login') {
 			next('/home')
-		} else {      
+		} else {
       
 			// 用户信息不存在，则重新拉取用户等信息
-			if (!store.userStore.user.userId) {
+			if (!store.userStore.user.id) {
 				await store.userStore.getUserInfoAction()
 				// await store.appStore.getDictListAction()
 				const menuRoutes = await store.routerStore.getMenuRoutes()
         
 				// 根据后端菜单路由，生成KeepAlive路由
 				const keepAliveRoutes = await getKeepAliveRoutes(menuRoutes, [])
-        
+        // 
 				// 添加菜单路由
 				asyncRoutes.children?.push(...keepAliveRoutes)
 				router.addRoute(asyncRoutes)

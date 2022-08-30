@@ -8,7 +8,7 @@
 		<div class="navbar-right">
 			<Fullscreen />
 			<User />
-			<!-- <Settings /> -->
+			<Settings />
 		</div>
 	</div>
 </template>

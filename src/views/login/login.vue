@@ -25,11 +25,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import store from '@/store'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { mockTest } from '@/api/user'
+import axios from 'axios'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -63,6 +65,18 @@ const onLogin = () => {
 			})
 	})
 }
+
+const getData = () => {
+  
+  mockTest().then(res => {
+    console.log(res);
+  })
+}
+
+onMounted(() => {
+  getData()
+})
+
 </script>
 
 <style lang="scss" scoped>

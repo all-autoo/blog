@@ -15,10 +15,10 @@ export default {
 	updateTime: 'Update Time',
 	required: 'Required items cannot be empty',
 	app: {
-		title: '停车场管理系统',
+		title: 'autoo',
 		description:
 			' ',
-		logoText: '停车场管理系统',
+		logoText: 'autoo',
 		miniLogoText: 'Fast',
 		username: 'Username',
 		password: 'Password',

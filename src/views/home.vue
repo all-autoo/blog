@@ -1,6 +1,7 @@
 <template>
 	<el-card class="layout-home">
-    1111
+   <h2> vue3 + ts + vite2 + mock</h2>
+   <h3>帅展帅讯结婚纪恋日于2022.5.20</h3>
 	</el-card>
 </template>
 

@@ -1,8 +1,9 @@
 import service from '@/utils/request'
 
+
 export const useUserInfoApi = () => {
 	return service({
-    url: '/api/user/getLoginUserInfo',
+    url: '/api/getUserInfo',
     method: 'get'
   })
 }
@@ -57,5 +58,13 @@ export const bindUserRole = (data: any) => {
     url: '/api/user/bindUserRole',
     method: 'POST',
     data
+  })
+}
+
+
+export const mockTest = () => {
+  return service({
+    url: '/api/getUserInfo',
+    method: 'get'
   })
 }

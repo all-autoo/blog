@@ -15,10 +15,10 @@ export default {
 	updateTime: '更新时间',
 	required: '必填项不能为空',
 	app: {
-		title: '停车场管理系统',
+		title: 'autoo',
 		description:
 			'',
-		logoText: '停车场管理系统',
+		logoText: 'autoo',
 		miniLogoText: 'Fast',
 		username: '用户名',
 		password: '密码',
