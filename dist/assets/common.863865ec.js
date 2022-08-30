@@ -1,1 +1,0 @@
-const u=[{label:"\u6B63\u5E38",value:0},{label:"\u51BB\u7ED3",value:1},{label:"\u5220\u9664",value:2}],a=[{label:"\u6708\u5361\u7528\u6237",value:0},{label:"\u4E34\u65F6\u7528\u6237",value:1}];export{a as m,u};
