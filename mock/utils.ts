@@ -46,28 +46,31 @@ function deepClone(source: any) {
 
 export type sizeReturn<T> = {
   list: T[],
-  pageNum: number,
-  pageSize: number,
-  totalPageNum: number,
+  current: number,
+  size: number,
+  totalcurrent: number,
   total: number
 }
 /**
  * 数据分页
- * @param {number} pageNum 多少页
- * @param {number} pageSize 一页多少条
+ * @param {number} current 多少页
+ * @param {number} size 一页多少条
  * @param {T[]} arr 数据源
  * @returns {T[]}
  */
 
-function listPaging<T>(pageNum: number, pageSize: number, arr: T[]): sizeReturn<T> {
-  pageNum = pageNum ? pageNum : 1
-  pageSize = pageSize ? pageSize : 10
-
+function listPaging<T>(current: number, size: number, arr: T[]): sizeReturn<T> {
+  current = current ? current : 1
+  size = size ? size : 10
+  console.log(current, size);
+  
+  console.log(arr.filter((item: T, index: number) => index >= (current - 1) * size && index < current * size).sort((a: any, b: any) => a.sort && a.sort - b.sort))
+  
   return {
-    list: arr.filter((item: T, index: number) => index >= (pageNum - 1) * pageSize && index < pageNum * pageSize).sort((a: any, b: any) => a.sort && a.sort - b.sort),
-    pageNum,
-    pageSize,
-    totalPageNum: Math.ceil(arr.length / pageSize),
+    list: arr.filter((item: T, index: number) => index >= (current - 1) * size && index < current * size).sort((a: any, b: any) => a.sort && a.sort - b.sort),
+    current,
+    size,
+    totalcurrent: Math.ceil(arr.length / size),
     total: arr.length,
   }
 }

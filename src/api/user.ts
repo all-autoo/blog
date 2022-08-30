@@ -37,9 +37,9 @@ export const parkUserSubmitApi = (dataForm: any) => {
 // 查询用户列表
 export const listUser = (query: any) => {
   return service({
-    url: '/api/user/queryUserList',
-    method: 'post',
-    data: query
+    url: '/api/userList',
+    method: 'get',
+    params: query
   })
 }
 

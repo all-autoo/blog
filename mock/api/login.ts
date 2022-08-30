@@ -36,13 +36,13 @@ export default [
       })
        return {
         code: 200,
-        message: 'ok',
+        msg: 'ok',
         data: userInfo
        }
     } else {
       return {
         code: -1,
-        message: '账号不存在'
+        msg: '账号不存在'
        }
     }
    },
@@ -59,7 +59,7 @@ export default [
     })
      return {
       code: 200,
-      message: 'ok',
+      msg: 'ok',
       data: userInfo
      }
    },

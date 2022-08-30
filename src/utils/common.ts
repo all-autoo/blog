@@ -7,7 +7,7 @@ export const userStatus = [
 
 // 月卡用户状态
 export const monthCardStatus = [
-  { label: '月卡用户', value: 0 },
-  { label: '临时用户', value: 1 }
+  { label: '停用', value: 0 },
+  { label: '正常', value: 1 }
 ]
 

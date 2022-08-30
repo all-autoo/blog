@@ -1,4 +1,5 @@
 import login from "./api/login"
+import user from "./api/user"
 
 export interface config {
   body: any;
@@ -6,4 +7,4 @@ export interface config {
   query: any;
 }
 
-export default [...login]
+export default [...login, ...user]

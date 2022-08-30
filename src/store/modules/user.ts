@@ -44,7 +44,7 @@ export const userStore = defineStore('userStore', {
 		},
 		// 用户退出
 		async logoutAction() {
-			await useLogoutApi()
+			// await useLogoutApi()
 
 			// 移除 token
 			this.setToken(null)

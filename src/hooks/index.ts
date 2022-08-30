@@ -51,7 +51,9 @@ export const useCrud = (options: IHooksOptions) => {
 		state.dataListLoading = true
 
 		state.apiList({...state.queryForm, size: state.size, current: state.current}).then((res: any) => {
-				state.dataList = state.isPage ? res.data.records : res.data
+      console.log(res);
+      
+				state.dataList = state.isPage ? res.data.list : res.data
 				state.total = state.isPage ? res.data.total : 0
         
 			})
